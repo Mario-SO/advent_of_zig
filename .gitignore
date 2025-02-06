@@ -1,0 +1,17 @@
+# Zig build artifacts
+zig-cache/
+zig-out/
+build/
+build-*/
+
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# IDE files
+*.swp
+*.swo
+.vscode/
+.idea/
