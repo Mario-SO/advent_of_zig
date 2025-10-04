@@ -14,7 +14,7 @@ pub fn main() !void {
     try map.put(frequency, {});
 
     while (true) {
-        var it = std.mem.tokenize(u8, input, "\n");
+        var it = std.mem.tokenizeScalar(u8, input, '\n');
         while (it.next()) |line| {
             const change = try std.fmt.parseInt(i64, line, 10);
             frequency += change;

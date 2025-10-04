@@ -30,7 +30,7 @@ const Position = struct {
 };
 
 pub fn main() !void {
-    var split_iter = std.mem.split(u8, input, ", ");
+    var split_iter = std.mem.splitSequence(u8, input, ", ");
     var position: Position = .{ .x = 0, .y = 0 };
     var dir: Direction = Direction.North;
 
@@ -52,6 +52,6 @@ pub fn main() !void {
         }
     }
 
-    const result = @as(u32, std.math.absCast(position.x) + std.math.absCast(position.y));
+    const result = @as(u32, @intCast(@abs(position.x))) + @as(u32, @intCast(@abs(position.y)));
     std.debug.print("{}", .{result});
 }

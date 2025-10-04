@@ -3,7 +3,7 @@ const input = @embedFile("./i1.txt");
 const print = std.debug.print;
 
 pub fn main() !void {
-    var it = std.mem.tokenize(u8, input, "\n");
+    var it = std.mem.tokenizeScalar(u8, input, '\n');
     var prev: usize = 0;
     var increased: usize = 0;
 

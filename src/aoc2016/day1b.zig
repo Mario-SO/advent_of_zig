@@ -14,10 +14,11 @@ const Position = struct {
 };
 
 pub fn main() !void {
-    var split_iter = std.mem.split(u8, input, ", ");
+    const alloc = std.heap.page_allocator;
+    var split_iter = std.mem.splitSequence(u8, input, ", ");
     var position = Position{ .x = 0, .y = 0 };
-    var visitedPositions = std.ArrayList(Position).init(std.heap.page_allocator);
-    defer visitedPositions.deinit();
+    var visitedPositions: std.ArrayListUnmanaged(Position) = .{};
+    defer visitedPositions.deinit(alloc);
     var dir: Direction = Direction.North;
 
     while (split_iter.next()) |instr| {
@@ -43,13 +44,13 @@ pub fn main() !void {
                 std.debug.print("{}", .{result});
                 return;
             }
-            try visitedPositions.append(position);
+            try visitedPositions.append(alloc, position);
         }
     }
     return error.NoTwiceVisitedPosition;
 }
 
-fn isVisitedTwice(visitedPositions: std.ArrayList(Position), position: Position) bool {
+fn isVisitedTwice(visitedPositions: std.ArrayListUnmanaged(Position), position: Position) bool {
     for (visitedPositions.items) |item| {
         if (item.x == position.x and item.y == position.y) {
             return true;
