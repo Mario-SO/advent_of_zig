@@ -67,13 +67,19 @@ pub fn main() !void {
     const args = try std.process.argsAlloc(allocator);
     defer std.process.argsFree(allocator, args);
 
+    if (args.len < 2) {
+        printUsage(args[0]);
+        return error.InvalidArguments;
+    }
+
+    // Check for "all" command
+    if (std.mem.eql(u8, args[1], "all")) {
+        try runAll();
+        return;
+    }
+
     if (args.len < 3) {
-        std.debug.print("Usage: {s} <year> <day>\n", .{args[0]});
-        std.debug.print("Example: {s} 2024 1a\n", .{args[0]});
-        std.debug.print("\nAvailable days:\n", .{});
-        for (available_days) |day_module| {
-            std.debug.print("  {d} {s}\n", .{ day_module.year, day_module.day });
-        }
+        printUsage(args[0]);
         return error.InvalidArguments;
     }
 
@@ -94,4 +100,36 @@ pub fn main() !void {
 
     std.debug.print("Day {d} {s} not found\n", .{ year, day });
     return error.DayNotFound;
+}
+
+fn printUsage(program_name: []const u8) void {
+    std.debug.print("Usage: {s} <year> <day>\n", .{program_name});
+    std.debug.print("       {s} all\n", .{program_name});
+    std.debug.print("\nExamples:\n", .{});
+    std.debug.print("  {s} 2024 1a\n", .{program_name});
+    std.debug.print("  {s} all\n", .{program_name});
+    std.debug.print("\nAvailable days:\n", .{});
+    for (available_days) |day_module| {
+        std.debug.print("  {d} {s}\n", .{ day_module.year, day_module.day });
+    }
+}
+
+fn runAll() !void {
+    std.debug.print("Running all days...\n\n", .{});
+
+    for (available_days) |day_module| {
+        std.debug.print("=== {d} Day {s} ===\n", .{ day_module.year, day_module.day });
+
+        var timer = try std.time.Timer.start();
+        day_module.main_fn() catch |err| {
+            std.debug.print("Error: {}\n", .{err});
+            continue;
+        };
+        const finish = timer.read();
+
+        const milliseconds = @as(f64, @floatFromInt(finish)) / 1_000_000.0;
+        std.debug.print("Time: {d:.3}ms\n\n", .{milliseconds});
+    }
+
+    std.debug.print("All days completed!\n", .{});
 }
