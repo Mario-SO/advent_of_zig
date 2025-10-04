@@ -12,5 +12,5 @@ pub fn main() !void {
         sum += input[0] - '0';
     }
 
-    print("Result = {}\n", .{sum + 5});
+    print("Result: {d}\n", .{sum + 5});
 }

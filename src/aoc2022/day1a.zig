@@ -18,5 +18,5 @@ pub fn main() !void {
             sum += curr;
         }
     }
-    print("Max: {d}\n", .{max});
+    print("Result: {d}\n", .{max});
 }

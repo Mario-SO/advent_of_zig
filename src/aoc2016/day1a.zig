@@ -55,5 +55,5 @@ pub fn main() !void {
     }
 
     const result = @as(u32, @intCast(@abs(position.x))) + @as(u32, @intCast(@abs(position.y)));
-    std.debug.print("{}", .{result});
+    std.debug.print("Result: {d}\n", .{result});
 }

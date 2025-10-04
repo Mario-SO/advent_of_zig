@@ -18,8 +18,7 @@ pub fn main() !void {
     }
 
     const total = top_three[0] + top_three[1] + top_three[2];
-    print("Top three sums: {d}, {d}, {d}\n", .{ top_three[0], top_three[1], top_three[2] });
-    print("Total of top three: {d}\n", .{total});
+    print("Result: {d}\n", .{total});
 }
 
 fn updateTopThree(top_three: *[3]usize, new_sum: usize) void {

@@ -20,7 +20,7 @@ pub fn main() !void {
             frequency += change;
 
             if (map.contains(frequency)) {
-                print("First frequency reached twice: {}\n", .{frequency});
+                print("Result: {d}\n", .{frequency});
                 return;
             }
 

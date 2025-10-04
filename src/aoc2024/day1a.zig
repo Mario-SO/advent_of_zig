@@ -33,5 +33,5 @@ pub fn main() !void {
         result += diff;
     }
 
-    print("{d}\n", .{result});
+    print("Result: {d}\n", .{result});
 }

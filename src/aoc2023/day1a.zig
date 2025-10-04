@@ -34,5 +34,5 @@ pub fn main() !void {
         sum += first * 10 + last;
     }
 
-    print("Total sum: {}\n", .{sum});
+    print("Result: {d}\n", .{sum});
 }

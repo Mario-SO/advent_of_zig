@@ -19,5 +19,6 @@ fn getFloor(comptime length: usize, chars: *const [length]u8) i32 {
 }
 
 pub fn main() !void {
-    std.log.debug("Floor: {d}", .{getFloor(input.len, input)});
+    const result = getFloor(input.len, input);
+    std.debug.print("Result: {d}\n", .{result});
 }

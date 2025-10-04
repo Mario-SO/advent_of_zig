@@ -43,7 +43,7 @@ pub fn main() !void {
             }
             if (isVisitedTwice(visitedPositions, position)) {
                 const result = @as(u32, @abs(position.x) + @abs(position.y));
-                std.debug.print("{}", .{result});
+                std.debug.print("Result: {d}\n", .{result});
                 return;
             }
             try visitedPositions.append(alloc, position);

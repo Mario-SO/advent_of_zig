@@ -9,5 +9,5 @@ pub fn main() !void {
         if (c == input[i + halfway]) sum += (c - '0') * 2;
     }
 
-    std.debug.print("{d}\n", .{sum});
+    std.debug.print("Result: {d}\n", .{sum});
 }

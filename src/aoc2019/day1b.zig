@@ -14,7 +14,7 @@ pub fn main() !void {
         sum += fuel;
     }
 
-    print("Result: {}\n", .{sum});
+    print("Result: {d}\n", .{sum});
 }
 
 fn calculateRealFuel(mass: i64, fuel: *i64) void {
@@ -22,6 +22,5 @@ fn calculateRealFuel(mass: i64, fuel: *i64) void {
     while (@divFloor(current_mass, 3) > 2) {
         current_mass = @divFloor(current_mass, 3) - 2;
         fuel.* += current_mass;
-        print("mass: {} fuel: {}\n", .{ current_mass, fuel.* });
     }
 }

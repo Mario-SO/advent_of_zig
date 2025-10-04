@@ -51,5 +51,5 @@ pub fn main() !void {
         sum += first.? * 10 + last.?;
     }
 
-    std.debug.print("Total sum: {d}\n", .{sum});
+    std.debug.print("Result: {d}\n", .{sum});
 }

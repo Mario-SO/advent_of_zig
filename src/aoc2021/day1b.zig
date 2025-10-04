@@ -1,6 +1,6 @@
 const input = @embedFile("./i1.txt");
 const std = @import("std");
-const print = std.log.debug;
+const print = std.debug.print;
 
 pub fn main() !void {
     var increments: usize = 0;
@@ -25,5 +25,5 @@ pub fn main() !void {
 
         if (new_sum > last_sum) increments += 1;
     }
-    print("Result: {}\n", .{increments});
+    print("Result: {d}\n", .{increments});
 }

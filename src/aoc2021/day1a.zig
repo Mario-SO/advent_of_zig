@@ -14,5 +14,5 @@ pub fn main() !void {
     }
 
     // -1 because the first increase doesnt count as we are forcing it
-    print("Number of times increased: {d}\n", .{increased - 1});
+    print("Result: {d}\n", .{increased - 1});
 }
