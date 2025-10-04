@@ -10,6 +10,8 @@ fn getFloor(comptime length: usize, chars: *const [length]u8) i32 {
             '(' => floor += 1,
             // floor down on )
             ')' => floor -= 1,
+            // ignore whitespace/newlines
+            '\n', '\r', ' ', '\t' => continue,
             else => unreachable,
         }
     }

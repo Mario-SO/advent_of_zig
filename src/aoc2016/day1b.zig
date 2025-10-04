@@ -21,7 +21,9 @@ pub fn main() !void {
     defer visitedPositions.deinit(alloc);
     var dir: Direction = Direction.North;
 
-    while (split_iter.next()) |instr| {
+    while (split_iter.next()) |instr_raw| {
+        const instr = std.mem.trim(u8, instr_raw, " \t\n\r");
+        if (instr.len == 0) continue;
         const turn = instr[0];
         const dist = try std.fmt.parseInt(i32, instr[1..], 10);
 
