@@ -4,7 +4,7 @@ const print = std.log.debug;
 
 pub fn main() !void {
     var increments: usize = 0;
-    var it = std.mem.tokenize(u8, input, "\n");
+    var it = std.mem.tokenizeScalar(u8, input, '\n');
 
     var window: [3]usize = .{
         // as .next() may return ?[]const (optional string), we need to forcefully unwrap with .?

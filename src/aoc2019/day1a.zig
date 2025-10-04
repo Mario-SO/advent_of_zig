@@ -4,7 +4,7 @@ const print = std.debug.print;
 
 pub fn main() !void {
     var sum: i64 = 0;
-    var it = std.mem.split(u8, input, "\n");
+    var it = std.mem.splitScalar(u8, input, '\n');
 
     while (it.next()) |line| {
         if (line.len == 0) continue; // Skip empty lines

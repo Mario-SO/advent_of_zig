@@ -5,7 +5,7 @@ pub fn main() !void {
     const input = @embedFile("i1.txt");
 
     // Split the input by newline characters.
-    var lines = std.mem.split(u8, input, "\n");
+    var lines = std.mem.splitScalar(u8, input, '\n');
 
     // Spelled-out numbers ("one" through "nine") with the digit value equal to index + 1.
     const nums = [_][]const u8{
