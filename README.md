@@ -27,7 +27,12 @@ zig build run -- 2015 1b
 zig build run -- 2023 1a
 ```
 
-To see available days, run without arguments:
+Run all available days:
+```bash
+zig build run -- all
+```
+
+To see available days and usage information, run without arguments:
 ```bash
 zig build run
 ```
@@ -37,43 +42,43 @@ zig build run
 All solutions tested on Zig 0.15.1:
 
 ### 2015
-- **Day 1a**: Floor: 280 (0.151ms) ✅
-- **Day 1b**: Floor: 1797 (0.022ms) ✅
+- **Day 1a**: Result: 280 (0.096ms) ✅
+- **Day 1b**: Result: 1797 (0.026ms) ✅
 
 ### 2016
-- **Day 1a**: 243 (0.055ms) ✅
-- **Day 1b**: 142 (0.336ms) ✅
+- **Day 1a**: Result: 243 (0.124ms) ✅
+- **Day 1b**: Result: 142 (0.891ms) ✅
 
 ### 2017
-- **Day 1a**: Result = 1251 (0.017ms) ✅
-- **Day 1b**: 1244 (0.014ms) ✅
+- **Day 1a**: Result: 1251 (0.020ms) ✅
+- **Day 1b**: Result: 1244 (0.012ms) ✅
 
 ### 2018
-- **Day 1a**: Result: 425 (0.079ms) ✅
-- **Day 1b**: First frequency reached twice: 57538 (65.763ms) ✅
+- **Day 1a**: Result: 425 (0.229ms) ✅
+- **Day 1b**: Result: 57538 (92.133ms) ✅
 
 ### 2019
-- **Day 1a**: Result: 3412207 (0.028ms) ✅
-- **Day 1b**: Result: 5115436 (0.476ms) ✅
+- **Day 1a**: Result: 3412207 (0.020ms) ✅
+- **Day 1b**: Result: 5115436 (0.026ms) ✅
 
 ### 2020
-- **Day 1a**: Result: 842016 (2.844ms) ✅
-- **Day 1b**: Result: 9199664 (258.755ms) ✅
+- **Day 1a**: Result: 842016 (3.368ms) ✅
+- **Day 1b**: Result: 9199664 (290.980ms) ✅
 
 ### 2021
-- **Day 1a**: Number of times increased: 1266 (0.242ms) ✅
-- **Day 1b**: Result: 1217 (0.215ms) ✅
+- **Day 1a**: Result: 1266 (0.231ms) ✅
+- **Day 1b**: Result: 1217 (0.217ms) ✅
 
 ### 2022
-- **Day 1a**: Max: 70720 (0.227ms) ✅
-- **Day 1b**: Total of top three: 207148 (0.218ms) ✅
+- **Day 1a**: Result: 70720 (0.240ms) ✅
+- **Day 1b**: Result: 207148 (0.229ms) ✅
 
 ### 2023
-- **Day 1a**: Total sum: 54239 (0.160ms) ✅
-- **Day 1b**: Total sum: 55343 (4.451ms) ✅
+- **Day 1a**: Result: 54239 (0.145ms) ✅
+- **Day 1b**: Result: 55343 (4.424ms) ✅
 
 ### 2024
-- **Day 1a**: 1530215 (0.659ms) ✅
+- **Day 1a**: Result: 1530215 (0.648ms) ✅
 
 ## Project Structure
 
