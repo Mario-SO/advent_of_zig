@@ -30,6 +30,8 @@ const day1b23 = @import("./aoc2023/day1b.zig");
 const day1a24 = @import("./aoc2024/day1a.zig");
 // const day1b24 = @import("./aoc2024/day1b.zig");
 
+const day1a25 = @import("./aoc2025/day1a.zig");
+
 const DayModule = struct {
     year: u16,
     day: []const u8,
@@ -57,6 +59,7 @@ const available_days = [_]DayModule{
     .{ .year = 2023, .day = "1b", .main_fn = day1b23.main },
     .{ .year = 2024, .day = "1a", .main_fn = day1a24.main },
     // .{ .year = 2024, .day = "1b", .main_fn = day1b24.main },
+    .{ .year = 2025, .day = "1a", .main_fn = day1a25.main },
 };
 
 pub fn main() !void {
